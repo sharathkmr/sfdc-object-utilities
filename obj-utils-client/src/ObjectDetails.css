@@ -1,0 +1,35 @@
+.table-c {
+    margin-top: 0.5em;
+    font-size: small;
+}
+
+.div-container {
+    margin-top: 2em;
+}
+
+.btn-loading-c {
+    float: right;
+}
+
+.btn-download-c {
+    background-color: white;
+    border: none;
+    outline: none;
+    margin: 0 0.5em 0.5em 0;
+}
+
+.btn-download-c:hover {
+    color: blue;
+}
+
+.btn-download-c:focus {
+    outline: none;
+}
+
+.td-CreatedDate {
+    width : 18%;
+}
+
+.td-LastModifiedDate {
+    width : 18%;
+}

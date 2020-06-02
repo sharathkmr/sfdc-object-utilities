@@ -1,0 +1,10 @@
+.card-body-c {
+    font-size: small;
+    text-align: center;
+}
+
+.header-custom {
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+}
