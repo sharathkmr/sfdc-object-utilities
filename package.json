@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "concurrently \"nodemon\" \" cd react-demo-client && set PORT=3000 npm start\""
+    "dev": "concurrently \"nodemon\" \" cd react-demo-client && set PORT=3000 npm start\"",
+    "heroku-postbuild": "cd obj-utils-client && npm install && npm run build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
