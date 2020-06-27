@@ -6,3 +6,15 @@
 .sandbox-btn {
     margin-left: 0.5em;
 }
+
+.card-app-desc {
+    margin-bottom: 1em;
+    font-size: 21px;
+    text-align: center;
+}
+
+.app-title {
+    font-weight: bold;
+    font-style: italic;
+    color: red;
+}

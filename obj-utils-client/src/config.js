@@ -9,7 +9,8 @@ export default {
         tooling_query : '/api/toolingQuery'
     },
     csv : {
-        header : {'API Name':'QualifiedApiName', 'NameSpace Prefix':'NamespacePrefix', 'Label':'Label', 'Created Date':'CreatedDate', 'Last Modified Date':'LastModifiedDate','LastModifiedBy.Name':'LastModifiedBy.Name', 'Object API Name':'EntityDefinition.QualifiedApiName', 'Object Id':'EntityDefinition.DurableId'}
+        header : {'API Name':'QualifiedApiName', 'NameSpace Prefix':'NamespacePrefix', 'Label':'Label', 'Created Date':'CreatedDate', 'Last Modified Date':'LastModifiedDate','LastModifiedBy.Name':'LastModifiedBy.Name', 'Object API Name':'EntityDefinition.QualifiedApiName', 'Object Id':'EntityDefinition.DurableId'},
+        objectHeader : {'API Name':'name', 'Label':'label', 'Label Plural':'labelPlural', 'Custom Object':'custom', 'Custom Setting':'customSetting', 'keyPrefix':'keyPrefix', 'Searchable':'searchable', 'Deletable':'deletable'}
     },
     queries : {
         fieldDefinition : 'SELECT Label, QualifiedApiName, DeveloperName, LastModifiedDate, LastModifiedById, LastModifiedBy.Name, EntityDefinition.DurableId, EntityDefinition.QualifiedApiName, NamespacePrefix FROM FieldDefinition WHERE EntityDefinition.QualifiedApiName = ',
