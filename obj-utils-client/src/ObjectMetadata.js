@@ -56,7 +56,7 @@ export default class ObjectMetadata extends React.Component {
 
     render() {
         return (
-            <Card>
+            <Card className="card-c">
                 <Card.Body className="card-body-c">
                     {this.state.isLoading ? <Spinner animation="border" size="lg" /> :
                     this.state.metadata.label ? <Form>

@@ -1,8 +1,12 @@
 import React from 'react';
 import './AppContainer.css';
-import { Container, Col, Form, Row } from 'react-bootstrap';
+import { Container, Col, Form, Row, Button } from 'react-bootstrap';
 import ObjectDetails from './ObjectDetails';
 import ObjectMetadata from './ObjectMetadata';
+import {convertToCSV, dowloadDocument} from './utils/CommonUtils';
+import config from './config';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 export default class AppContainer extends React.Component {
     constructor(props) {
@@ -54,6 +58,17 @@ export default class AppContainer extends React.Component {
         });
     }
 
+    downloadObjectsData = (e) => {
+
+        if(!this.state.objData || (this.state.objData && this.state.objData.length === 0)) {
+            return;
+        }
+
+        const csvFields = new Map(Object.entries(config.csv.objectHeader));
+        //console.log('csvFields: ', csvFields);
+        dowloadDocument('Objects List', convertToCSV(this.state.objData, csvFields));
+    }
+
     render() {
         return (
             <div className="app-container">
@@ -64,7 +79,7 @@ export default class AppContainer extends React.Component {
                                 <Form.Group controlId="exampleForm.SelectCustomSizeLg">
                                     <Form.Label>Object</Form.Label>
                                     <Form.Control as="select" size="sm" custom onChange={this.onObjectSelect}>
-                                        <option>--none--</option>
+                                        <option>-- None --</option>
                                         {this.state.objectsDisplayed && this.state.objectsDisplayed.length > 0 ? this.state.objectsDisplayed.map(obj => <option key={obj.name}>{obj.name}</option> ) : ''}
                                     </Form.Control>
                                 </Form.Group>
@@ -77,6 +92,11 @@ export default class AppContainer extends React.Component {
                             </Col>
                             <Col sm={2}>
                                 <Form.Check type="switch" id="switch-custom-settings" label="Custom Settings" onClick={this.customSettingsSwitch} checked={this.state.customSettings} />
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col sm={12}>
+                                <Button className="btn-objs-list" variant="outline-info" size="sm" onClick={this.downloadObjectsData}><FontAwesomeIcon icon={faDownload} size="lg" /> Objects List</Button>
                             </Col>
                         </Row>
                     </Form>
